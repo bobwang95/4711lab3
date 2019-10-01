@@ -11,7 +11,7 @@ addArtist(
 
 function myFunction() {
   var x = document.getElementById("newform");
-  if (x.style.display === "none") {
+  if (x.style.display !== "block") {
     x.style.display = "block";
   } else {
     let name = document.getElementById("name");
@@ -34,8 +34,17 @@ function add() {
     name.value = "";
     description.value = "";
     picture.value = "";
+
+    let hideform = document.getElementById("newform");
+
+    if (hideform.style.display == "none") {
+      hideform.style.display = "block";
+    } else {
+      hideform.style.display = "none";
+    }
   }
 }
+
 function addArtist(name, description, picture) {
   let form = document.getElementById("list");
 
